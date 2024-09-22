@@ -19,5 +19,9 @@ def greet():
 def wordfind():
     return "where we find essential  for us"
 
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
+
 if __name__=="__main__":
     app.run(debug=True)
