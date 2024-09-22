@@ -1,22 +1,23 @@
-from flask import Flask
+from flask import Flask , render_template 
 
 app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    return "welcome to flask"
+    return "null"
 
-@app.route('/bye')
+@app.route('/home')
+def home():
+    return  render_template("home.html")
 
-def bye():
-    return "bye for today we will be back tomorrow" 
+
 @app.route('/hello')
 def greet():
     return "hello from the other side"
 
-@app.route('word')
+@app.route('/word')
 def wordfind():
-    return "where we find essential vocavularry for us"
+    return "where we find essential  for us"
 
 if __name__=="__main__":
     app.run(debug=True)
