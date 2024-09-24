@@ -8,7 +8,10 @@ def homepage():
 
 @app.route('/home')
 def home():
-    return  render_template("home.html")
+    name = "noman"
+    age = 26
+    livein = "feni"
+    return  render_template("home.html", name=name,age=age,livein=livein)
 
 
 @app.route('/hello')
