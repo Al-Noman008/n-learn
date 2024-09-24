@@ -1,4 +1,4 @@
-from flask import Flask , render_template 
+from flask import Flask , render_template ,request
 
 app = Flask(__name__)
 
@@ -22,8 +22,13 @@ def greet():
 def wordfind():
     return "where we find essential  for us"
 
-@app.route('/contact')
+@app.route('/contact',methods=["GET","POST"])
 def contact():
+    if request.method == "POST":
+        form_data = request.form
+        name = form_data.get("name")
+        email = form_data.get("email")
+        text = form_data.get("text")
     return render_template("contact.html")
 
 if __name__=="__main__":
